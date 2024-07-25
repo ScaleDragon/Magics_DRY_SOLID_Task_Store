@@ -34,7 +34,7 @@ ___Реализация___
 ```java
 private static int nextID = 1;
 ```
-строка № 7
+[Class Order, строка № 7](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/c279b0e3140d818cce8b773c74829a8a81c31b00/netology/Order.java#L7)
 - Принцип DRY (Don't Repeat Yourself)
 
 В методе filterProducts класса NavigationMenu применяется фильтрация с использованием Stream API,
