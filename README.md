@@ -46,20 +46,28 @@ private static int nextID = 1;
     case 3 -> filter.setFilteredProducts(filter.filterByCategory());
      }
  ```
-строки № 18-46
+[class NavigationMenu, строки № 34-36](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/300cb3b1fca376fad4122017b84cc9feda8e6588/netology/NavigationMenu.java#L34C20-L36C27)
 
 -  Принцип единственной ответственности (Single Responsibility Principle, SRP)
 
 Программа разделена на классы.
-Например класс Menu отвечает только за представление продукта и его свойств.
+Например класс Account отвечает только за представление пользователя и его свойств.
+
+[Classs Account](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/300cb3b1fca376fad4122017b84cc9feda8e6588/netology/Account.java#L8C1-L21C1)
 
    - Принцип открытости/закрытости (Open/Closed Principle, OCP)
 
  Класс NavigationMenu открыт для расширения (можно добавить новые методы фильтрации), но закрыт для модификации.
 
+ [Class NavigationMenu](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/300cb3b1fca376fad4122017b84cc9feda8e6588/netology/NavigationMenu.java#L11)
+
   - Принцип подстановки Барбары Лисков (Liskov Substitution Principle, LSP)
 
  Продукты из папки products наследуются от общего предка класса Product, но у каждого класса имеется своя категория.
+
+ [Class Product родитель](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/300cb3b1fca376fad4122017b84cc9feda8e6588/netology/Product.java#L6)
+
+[Class Dairy дочерний](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/300cb3b1fca376fad4122017b84cc9feda8e6588/netology/products/Dairy.java#L11)
 
 - Dependency inversion principle 
   
@@ -71,11 +79,12 @@ private static int nextID = 1;
     AddToCar(account, productToAdd, shop);
 }
 ```
-NavigationMenu 49
+
+[interfaceService/AddToCar ](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/300cb3b1fca376fad4122017b84cc9feda8e6588/netology/NavigationMenu.java#L49)
 
 ```java
 if (productToRemove != null) {
     RemovalFromCart(account, productToRemove, shop);
 }
 ```
-NavigationMenu 66
+[interfaceService/RemovalFromCart](https://github.com/ScaleDragon/Magics_DRY_SOLID_Task_Store/blob/300cb3b1fca376fad4122017b84cc9feda8e6588/netology/NavigationMenu.java#L66)
